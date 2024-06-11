@@ -1,6 +1,6 @@
 <script lang="ts">
-	import ArrowDown from '../componentes/ArrowDown.svelte';
-	import ArrowUp from '../componentes/ArrowUp.svelte';
+	import ArrowDown from './ArrowDown.svelte';
+	import ArrowUp from './ArrowUp.svelte';
 
   export let type: 'EXPENSE' | 'INCOME' =  'INCOME';
   export let title: string;
