@@ -5,6 +5,7 @@
 	import CashFlowCard from '../componentes/CashFlowCard.svelte';
 	import Modal from '../componentes/Modal.svelte';
 	import type { CashFlow, FinancialSummary, TransactionType } from '../types/cash-flow';
+	import Logo from '../componentes/Logo.svelte';
 
   let showModal = false;
   let financialSummary: FinancialSummary = {
@@ -63,6 +64,9 @@
 </script>
 
 <div class="h-screen">
+  <button on:click={() => showModal = true} class="md:hidden text-white fixed right-6 bottom-12 bg-[#81D15A] text-5xl p-2 rounded-full">
+    <img src="/svg/plus.svg" class="w-12" alt="">
+  </button>
   <Modal bind:showModal on:click handleSubmit={handleSubmit}>
     <div class="w-full h-full">
       <p class="text-2xl mb-6">Criando novo Fluxo</p>
@@ -97,7 +101,8 @@
     </div>
   </Modal>
   <div class="flex justify-around items-center">
-    <h1 class="my-12 text-white">Cash tracker</h1>
+    <!-- <Logo height={60} width={100}  /> -->
+    <h1 class="my-12 text-white text-2xl">ca<span class="text-[#81D15A]">$</span>h tracker</h1>
     <button on:click={() => showModal = true} class="trasition backdrop-brightness-125 p-4 rounded-md text-white hover:backdrop-brightness-50">Adicionar fluxo</button>
   </div>
   <div class=" flex justify-between mx-auto -mb-12 max-w-screen-xl px-4 gap-8 overflow-x-scroll scroll-auto snap-x">
